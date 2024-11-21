@@ -134,7 +134,7 @@ def mkConfigDir( __grains__, m_id, m_master, num, s_vers ):
     fh.write( "  osrelease:\n" )
     fh.write( "    %s\n" % __grains__['osrelease'] )
     with open('saltver.yaml','r') as f:
-        rec = yaml.load(f,Loader=yaml.SaveLoader)
+        rec = yaml.load(f,Loader=yaml.SafeLoader)
         if ver in rec:
             fh.write( "  saltversion:\n" )
             fh.write( "    %s\n" % ver )
