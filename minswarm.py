@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/opt/saltstack/salt/bin/python3
 '''
 Salt Minion Swarm
 '''
