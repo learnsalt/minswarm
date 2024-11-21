@@ -133,8 +133,8 @@ def mkConfigDir( __grains__, m_id, m_master, num, s_vers ):
         fh.write( "    %s\n" % __grains__['osfullname'] )
     fh.write( "  osrelease:\n" )
     fh.write( "    %s\n" % __grains__['osrelease'] )
-    with open('saltver.yaml') as f:
-        rec = yaml.load(f)
+    with open('saltver.yaml','r') as f:
+        rec = yaml.load(f,Loader=yaml.SaveLoader)
         if ver in rec:
             fh.write( "  saltversion:\n" )
             fh.write( "    %s\n" % ver )
@@ -169,8 +169,8 @@ if __name__ == '__main__':
     network_num = 1
 
     saltvers = []
-    with open('saltver.yaml') as f:
-        rec = yaml.load(f)
+    with open('saltver.yaml','r') as f:
+        rec = yaml.load(f,Loader=yaml.SafeLoader)
         for e in rec:
             saltvers.append( e )
 
