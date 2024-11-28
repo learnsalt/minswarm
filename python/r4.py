@@ -29,6 +29,8 @@ class SaltAPIClient:
         Authenticate against the Salt API to retrieve an authentication token.
 
         :return: Boolean indicating if authentication was successful
+        Reference:
+
         """
         try:
             # Prepare the payload for authentication
@@ -69,6 +71,9 @@ class SaltAPIClient:
         :param arg: Optional arguments for the function
         :param expr_form: The expression form for targeting, default is 'glob'
         :return: JSON response from Salt API or None if an error occurred
+        master01:/etc/salt/master.d/salt-api.conf has local client enabled
+         netapi_enable_clients: ['local','wheel','runner','jobs']
+        
         """
         if not self.auth_token:
             if not self.login():
