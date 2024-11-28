@@ -1,6 +1,6 @@
 curl -sSk http://localhost:8001 \
   -H "Accept: application/x-yaml" \
-  -H "X-Auth-Token:31eed454a960c0ae41a2d1522deab65dc5f4ce4f" \
+  -H "X-Auth-Token:db38511573423052e8a3d46c93f547f6f7edc0be" \
   -d username=saltdev \
   -d password=saltdev \
   -d eauth=pam \
