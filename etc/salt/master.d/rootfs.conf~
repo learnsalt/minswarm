@@ -1,0 +1,48 @@
+#####      File Server settings      #####
+##########################################
+# Salt runs a lightweight file server written in zeromq to deliver files to
+# minions. This file server is built into the master daemon and does not
+# require a dedicated port.
+
+# The file server works on environments passed to the master, each environment
+# can have multiple root directories, the subdirectories in the multiple file
+# roots cannot match, otherwise the downloaded files will not be able to be
+# reliably ensured. A base environment is required to house the top file.
+# Example:
+file_roots:
+  base:
+    - /srv/salt/
+#   dev:
+#     - /srv/salt/dev/services
+#     - /srv/salt/dev/states
+#   prod:
+#     - /srv/salt/prod/services
+#     - /srv/salt/prod/states
+#
+#file_roots:
+#  base:
+#    - /srv/salt
+#
+
+# The master_roots setting configures a master-only copy of the file_roots dictionary,
+# used by the state compiler.
+#master_roots:
+#  base:
+#    - /srv/salt-master
+
+# When using multiple environments, each with their own top file, the
+# default behaviour is an unordered merge. To prevent top files from
+# being merged together and instead to only use the top file from the
+# requested environment, set this value to 'same'.
+#top_file_merging_strategy: merge
+
+# To specify the order in which environments are merged, set the ordering
+# in the env_order option. Given a conflict, the last matching value will
+# win.
+#env_order: ['base', 'dev', 'prod']
+
+# If top_file_merging_strategy is set to 'same' and an environment does not
+# contain a top file, the top file in the environment specified by default_top
+# will be used instead.
+#default_top: base
+
