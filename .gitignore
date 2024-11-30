@@ -272,3 +272,4 @@ tmp/
 usr/
 var/
 vw-data/
+/etc/salt/pki/
