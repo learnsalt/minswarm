@@ -1,0 +1,36 @@
+.
+├── apache
+│   ├── apache_configure_cleanall.sls
+│   ├── apache_pkg_remove.sls
+│   ├── cleanall_apache_test.sls
+│   ├── configure.sls
+│   ├── files
+│   ├── init.sls
+│   ├── install.sls
+│   ├── startup.sls
+│   └── stop.sls
+├── edit
+│   ├── dev_vimrc
+│   ├── qa_vimrc
+│   ├── vim2.sls
+│   ├── vimrc
+│   └── vim.sls
+├── minswarm
+│   ├── LICENSE
+│   ├── minswarm.py
+│   ├── python
+│   ├── README.md
+│   ├── rust
+│   ├── saltver.yaml
+│   └── shell
+├── orchestrate
+│   ├── apache_setup.sls
+│   ├── apache_teardown.sls
+│   └── testor1.sh
+├── tests
+│   ├── or2.sls
+│   ├── or3.sls
+│   └── or.sls
+└── treedir.txt
+
+9 directories, 24 files
